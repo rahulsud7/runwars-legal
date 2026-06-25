@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunWars | Legal & Privacy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,900&family=Raleway:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           CORE BRUTALIST & DARK MODE STYLES
+           ========================================= */
+        :root {
+            --bg-dark: #050505;
+            --bg-panel: #0d0d12;
+            --accent-neon: #ccff00;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --border-color: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 { font-size: 2.5rem; color: var(--text-main); margin-bottom: 5px; }
+        h2 { font-size: 1.5rem; color: var(--accent-neon); margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        p { font-weight: 700; color: #aaaaaa; margin-bottom: 20px; font-size: 15px; }
+        ul { margin-left: 20px; margin-bottom: 20px; color: #aaaaaa; font-weight: 700; font-size: 15px; }
+        li { margin-bottom: 10px; }
+        strong { color: var(--text-main); font-weight: 900; }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            flex: 0 0 250px;
+            position: sticky;
+            top: 40px;
+            height: max-content;
+        }
+
+        .nav-header {
+            margin-bottom: 30px;
+        }
+
+        .nav-header p {
+            font-size: 12px;
+            font-weight: 900;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .nav-btn {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        .nav-btn.active {
+            background-color: var(--accent-neon);
+            color: #000;
+            border-color: var(--accent-neon);
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            background-color: var(--bg-panel);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .document-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .document-section.active {
+            display: block;
+        }
+
+        .last-updated {
+            font-size: 12px;
+            color: var(--accent-neon);
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            display: inline-block;
+            background: rgba(204, 255, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px 15px;
+            }
+            .sidebar {
+                flex: none;
+                position: relative;
+                top: 0;
+            }
+            .content-area {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="nav-header">
+                <h1>RUNWARS</h1>
+                <p>System Protocols</p>
+            </div>
+            <button class="nav-btn active" onclick="switchDoc('privacy')" id="btn-privacy">PRIVACY POLICY</button>
+            <button class="nav-btn" onclick="switchDoc('terms')" id="btn-terms">TERMS OF SERVICE</button>
+        </div>
+
+        <div class="content-area">
+            
+            <div id="privacy" class="document-section active">
+                <h1>Privacy Policy</h1>
+                <span class="last-updated">EFFECTIVE DATE: OCTOBER 2026</span>
+                
+                <p>Welcome to RunWars. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application (the "App"). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.</p>
+
+                <h2>1. Information We Collect</h2>
+                <p>To provide the augmented reality fitness experience of RunWars, we must collect specific data points:</p>
+                <ul>
+                    <li><strong>Geolocation Data:</strong> We collect persistent, real-time background location (GPS) data when you are actively running and utilizing the "Tracker" feature. This is required to calculate your distance and determine if you have captured territorial grid hexes.</li>
+                    <li><strong>Account Data:</strong> We collect your chosen callsign (username), email address, and authentication data via secure third-party providers (Clerk).</li>
+                    <li><strong>Health/Fitness Data:</strong> We access local pedometer/step-count data on your device to supplement distance tracking during active missions.</li>
+                </ul>
+
+                <h2>2. How We Use Your Information</h2>
+                <p>Your data is utilized strictly for gameplay mechanics and system functionality:</p>
+                <ul>
+                    <li>To track your physical movement and translate it into in-game points and territory captures.</li>
+                    <li>To maintain live, global leaderboards and syndicate (club) rankings.</li>
+                    <li>To monitor for cheating, GPS-spoofing, or violation of our terms.</li>
+                </ul>
+
+                <h2>3. Public Data & Multiplayer Elements</h2>
+                <p>RunWars is a competitive multiplayer game. By participating, you acknowledge that certain data will be publicly visible to other players on the tactical map, including: your Username, your Club affiliation, and the geographical territories/hexes you currently control.</p>
+
+                <h2>4. Data Sharing & Security</h2>
+                <p><strong>We do not sell your personal data or location history to third-party advertising networks.</strong> Your routing data is encrypted and stored securely on our servers (AWS/Supabase) solely for calculating game state. We may share information with government authorities only if compelled by law.</p>
+
+                <h2>5. Account Deletion</h2>
+                <p>You may request the complete deletion of your account and associated telemetry data at any time by contacting support or using the deletion protocol within the App settings.</p>
+            </div>
+
+            <div id="terms" class="document-section">
+                <h1>Terms of Service</h1>
+                <span class="last-updated">EFFECTIVE DATE: JUNE 2026</span>
+
+                <p>By downloading, accessing, or using RunWars, you agree to be bound by these Terms of Service. RunWars is an augmented reality game that requires physical movement in the real world.</p>
+
+                <h2>1. Real-World Safety & Liability</h2>
+                <p><strong>You play at your own risk.</strong> During gameplay, you agree to remain aware of your surroundings and to play safely. You agree that your use of the App is at your own risk, and it is your responsibility to maintain health, liability, hazard, personal injury, and life insurance policies as you deem reasonably necessary.</p>
+                <ul>
+                    <li>You will not trespass, or in any manner attempt to gain access to any property or location where you do not have the right or permission to be.</li>
+                    <li>You will obey all pedestrian, traffic, and local laws.</li>
+                    <li>RunWars and its developers are not liable for any property damage, personal injury, or death that occurs while utilizing the application.</li>
+                </ul>
+
+                <h2>2. Code of Conduct</h2>
+                <p>To ensure a fair and secure network for all operatives, you agree not to:</p>
+                <ul>
+                    <li>Use GPS spoofing, emulators, modified software, or third-party tools to falsify your location or distance traveled.</li>
+                    <li>Harass, threaten, or dox other players through the Faction Wire (chat) or in the real world.</li>
+                    <li>Upload hateful, discriminatory, or highly offensive content to the Faction Wire.</li>
+                </ul>
+                <p>Violation of these rules will result in immediate termination of your account and wiping of your territorial control without appeal.</p>
+
+                <h2>3. Intellectual Property</h2>
+                <p>All source code, databases, functionality, software, UI designs, and graphics within the App are owned and controlled by us, and are protected by copyright and trademark laws.</p>
+
+                <h2>4. Modifications to the App</h2>
+                <p>We reserve the right to change, modify, or remove the contents of the App at any time or for any reason at our sole discretion without notice. We also reserve the right to reset game state, leaderboards, or territory ownership for seasonal balancing.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function switchDoc(docType) {
+            // Remove active classes
+            document.getElementById('btn-privacy').classList.remove('active');
+            document.getElementById('btn-terms').classList.remove('active');
+            document.getElementById('privacy').classList.remove('active');
+            document.getElementById('terms').classList.remove('active');
+
+            // Add active classes to the selected target
+            if(docType === 'privacy') {
+                document.getElementById('btn-privacy').classList.add('active');
+                document.getElementById('privacy').classList.add('active');
+            } else {
+                document.getElementById('btn-terms').classList.add('active');
+                document.getElementById('terms').classList.add('active');
+            }
+            
+            // Scroll back to top on mobile
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
