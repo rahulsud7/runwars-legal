@@ -166,6 +166,7 @@
 <body>
 
     <div class="container">
+        <!-- NAVIGATION SIDEBAR -->
         <div class="sidebar">
             <div class="nav-header">
                 <h1>RUNWARS</h1>
@@ -173,10 +174,13 @@
             </div>
             <button class="nav-btn active" onclick="switchDoc('privacy')" id="btn-privacy">PRIVACY POLICY</button>
             <button class="nav-btn" onclick="switchDoc('terms')" id="btn-terms">TERMS OF SERVICE</button>
+            <button class="nav-btn" onclick="switchDoc('deletion')" id="btn-deletion">ACCOUNT DELETION</button>
         </div>
 
+        <!-- CONTENT AREA -->
         <div class="content-area">
             
+            <!-- PRIVACY POLICY DOCUMENT -->
             <div id="privacy" class="document-section active">
                 <h1>Privacy Policy</h1>
                 <span class="last-updated">EFFECTIVE DATE: JUNE 2026</span>
@@ -209,6 +213,7 @@
                 <p>You may request the complete deletion of your account and associated telemetry data at any time by contacting support or using the deletion protocol within the App settings.</p>
             </div>
 
+            <!-- TERMS OF SERVICE DOCUMENT -->
             <div id="terms" class="document-section">
                 <h1>Terms of Service</h1>
                 <span class="last-updated">EFFECTIVE DATE: JUNE 2026</span>
@@ -239,24 +244,59 @@
                 <p>We reserve the right to change, modify, or remove the contents of the App at any time or for any reason at our sole discretion without notice. We also reserve the right to reset game state, leaderboards, or territory ownership for seasonal balancing.</p>
             </div>
 
+            <!-- ACCOUNT DELETION DOCUMENT -->
+            <div id="deletion" class="document-section">
+                <h1>Account & Data Deletion</h1>
+                <span class="last-updated">EFFECTIVE DATE: JUNE 2026</span>
+                
+                <p>If you no longer wish to participate in RunWars, you have the right to request the complete deletion of your account and all associated location/gameplay data.</p>
+
+                <h2>How to Delete Your Account In-App</h2>
+                <p>The fastest way to delete your data is directly within the RunWars app:</p>
+                <ul>
+                    <li>Open the RunWars app and log in.</li>
+                    <li>Navigate to the <strong>Profile</strong> tab on the bottom navigation bar.</li>
+                    <li>Tap the settings/gear icon to open your Account Management.</li>
+                    <li>Select <strong>Delete Account</strong> and confirm. Your data will be wiped immediately.</li>
+                </ul>
+
+                <h2>How to Request Manual Deletion</h2>
+                <p>If you no longer have access to the app and wish to have your account deleted, you can submit a manual deletion request to our support team.</p>
+                <p>Please send an email from the address associated with your RunWars account to:</p>
+                <ul>
+                    <li><strong>Email:</strong> rahulsud1210@gmail.com</li>
+                    <li><strong>Subject:</strong> RunWars Account Deletion Request</li>
+                    <li><strong>Body:</strong> Please include your Callsign (Username) and state that you want your account and data permanently deleted.</li>
+                </ul>
+                <p>We will process your request and permanently wipe your data from our servers within 7 business days.</p>
+            </div>
+
         </div>
     </div>
 
+    <!-- JAVASCRIPT FOR TOGGLING SECTIONS -->
     <script>
         function switchDoc(docType) {
-            // Remove active classes
+            // Remove active classes from buttons
             document.getElementById('btn-privacy').classList.remove('active');
             document.getElementById('btn-terms').classList.remove('active');
+            document.getElementById('btn-deletion').classList.remove('active');
+
+            // Hide all documents
             document.getElementById('privacy').classList.remove('active');
             document.getElementById('terms').classList.remove('active');
+            document.getElementById('deletion').classList.remove('active');
 
             // Add active classes to the selected target
             if(docType === 'privacy') {
                 document.getElementById('btn-privacy').classList.add('active');
                 document.getElementById('privacy').classList.add('active');
-            } else {
+            } else if(docType === 'terms') {
                 document.getElementById('btn-terms').classList.add('active');
                 document.getElementById('terms').classList.add('active');
+            } else if(docType === 'deletion') {
+                document.getElementById('btn-deletion').classList.add('active');
+                document.getElementById('deletion').classList.add('active');
             }
             
             // Scroll back to top on mobile
